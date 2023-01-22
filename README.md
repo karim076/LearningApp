@@ -16,7 +16,6 @@ internal class Building
    
    public ICollection<Employees> Workers { get; set; } = null; // has many employees
 }
-
 ```
 ```
 internal class Building
@@ -27,7 +26,6 @@ internal class Building
    
    public Building Building { get; set; } // Belongs to a Building
 }
-
 ```
 Met``` public Building Building { get; set; } ``` en ``` public ICollection<Employees> Workers { get; set; } = null;```
 maken we de relatie one to many.
@@ -35,12 +33,10 @@ maken we de relatie one to many.
 Om je models(classes) te migrate ga je in je Package Manager Console of je gaat bij Tools/NuGet Package Manager/Package Manager Console en kun je een commando's uitvoeren en de commando die we uitvoeren is: 
 ```
 Add-Migration MyFirstMigration
-
 ```
 En daarna dit commando:
 ```
 Update-Database
-
 ```
 ## Nu maken we een listview om daar in onze data te weergeven
 Voorbeeld die wordt gebruikt in het app zelf:
@@ -78,3 +74,15 @@ using (var context = new learnContext())
 ```
 We hallen alle buildings op en plaatsen dat in LoadedBuilding en daarna halen we employees op dit is belangerijk je slaat em niet op maar je roept wel de data of als je dit niet worden de Employees niet getoond, en als laats voegen we de LoadedBuilding in het listview.
 # Einde
+## Extra seeding
+Om snel je te testen kun je jouw database seeden hier een voorbeeld:
+```
+// seeding database
+Building A = new Building { BuildingName = "Gebouw A"};
+Building B = new Building { BuildingName = "Gebouw A"};
+            
+Employees Employee_One = new Employees { Name = "Sam", Last_Name = "Ports", Building = A };
+Employees Employee_Two = new Employees { Name = "Harry Potter", Last_Name = "Potter", Building = A };
+Employees Employee_Three = new Employees { Name = "Karim", Last_Name = "Alkichouhi", Building = B };
+```
+Dit doe je bij het eerste keer starten van je programma en daarna commenten om niet de date dubble te laten staan in het database
