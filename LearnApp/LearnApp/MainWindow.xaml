@@ -5,12 +5,54 @@
     x:Class="LearnApp.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:LearnApp"
+    xmlns:local="using:LearnApp.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+        <!-- create a listview -->
+        <!--<ListView x:Name="lv_building">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Building">
+                    <StackPanel>
+                        <TextBlock Text="{Binding BuildingName}"/>
+                        <ListView x:Name="lv_employee">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="local:Employees">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Name}"/>
+                                        <TextBlock Text="{Binding Last_Name}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+        <ListView x:Name="lv_building">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Building">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding BuildingName}" />
+
+                        <ListView ItemsSource="{Binding Workers}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="local:Employees">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Name}" />
+                                        <TextBlock Text="{Binding Last_Name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackPanel>
 </Window>

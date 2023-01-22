@@ -1,6 +1,9 @@
 // Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
+using BetApp.Data;
+using LearnApp.Models;
+using System.Text.Json;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -30,10 +33,25 @@ namespace LearnApp
         {
             this.InitializeComponent();
         }
-
+        
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
             myButton.Content = "Clicked";
+            //// seeding database
+            //Building A = new Building { BuildingName = "Gebouw A"};
+            //Building B = new Building { BuildingName = "Gebouw A"};
+            
+            //Employees Employee_One = new Employees { Name = "Sam", Last_Name = "Ports", Building = A };
+            //Employees Employee_Two = new Employees { Name = "Harry Potter", Last_Name = "Potter", Building = A };
+            //Employees Employee_Three = new Employees { Name = "Karim", Last_Name = "Alkichouhi", Building = B };
+            
+            
+            using (var context = new learnContext())
+            {
+                var LoadedBuilding = context.Building   .ToList();
+                context.Employees.ToList();
+                lv_building.ItemsSource = LoadedBuilding;
+            }
         }
     }
 }
