@@ -37,7 +37,7 @@ namespace LearnApp
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
             myButton.Content = "Clicked";
-            //// seeding database
+            // seeding database
             //Building A = new Building { BuildingName = "Gebouw A"};
             //Building B = new Building { BuildingName = "Gebouw A"};
             
@@ -48,7 +48,7 @@ namespace LearnApp
             
             using (var context = new learnContext())
             {
-                var LoadedBuilding = context.Building   .ToList();
+                var LoadedBuilding = context.Building.ToList();
                 context.Employees.ToList();
                 lv_building.ItemsSource = LoadedBuilding;
             }
