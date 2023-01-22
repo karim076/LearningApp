@@ -19,7 +19,7 @@ internal class learnContext : DbContext
             "server=localhost;" +    // Server name
             "port=3306;" +           // Port number
             "user=root;" +           // The user
-            "password=Suiker123;" +  // The password
+            "password=;" +  // The password
             "database=learnapp"      // Database name
             , Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.17-mariadb"));
         }
