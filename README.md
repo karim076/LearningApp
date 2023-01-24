@@ -75,7 +75,7 @@ using (var context = new learnContext())
 We hallen alle buildings op en plaatsen dat in LoadedBuilding en daarna halen we employees op dit is belangerijk je slaat em niet op maar je roept wel de data of als je dit niet doet wordt de Employees niet getoond, en als laats voegen we de LoadedBuilding in het listview.
 # Einde
 ## Extra seeding
-Om snel je te testen kun je jouw database seeden hier een voorbeeld:
+Om snel je App te testen kun je jouw database seeden hier een voorbeeld:
 ```
 // seeding database
 Building A = new Building { BuildingName = "Gebouw A"};
