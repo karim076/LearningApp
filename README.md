@@ -72,7 +72,7 @@ using (var context = new learnContext())
    lv_building.ItemsSource = LoadedBuilding            
 }
 ```
-We hallen alle buildings op en plaatsen dat in LoadedBuilding en daarna halen we employees op dit is belangerijk je slaat em niet op maar je roept wel de data of als je dit niet worden de Employees niet getoond, en als laats voegen we de LoadedBuilding in het listview.
+We hallen alle buildings op en plaatsen dat in LoadedBuilding en daarna halen we employees op dit is belangerijk je slaat em niet op maar je roept wel de data of als je dit niet doet wordt de Employees niet getoond, en als laats voegen we de LoadedBuilding in het listview.
 # Einde
 ## Extra seeding
 Om snel je te testen kun je jouw database seeden hier een voorbeeld:
